@@ -8,7 +8,7 @@ android:
   components:
   - tools
   - platform-tools
-  - build-tools-26.0.0 rc2
+  - build-tools-26.0.0-preview
   - build-tools-25.0.3
   - android-25
   - extra-android-support
@@ -22,3 +22,6 @@ android:
   - '.+'
 script:
   - ./gradlew build
+  - ${ANDROID_HOME}tools/bin/sdkmanager --channel=3 \
+      "tools" "platform-tools" "build-tools;26.0.0-rc2" "platforms;android-O" \
+      "extras;google;google_play_services"
